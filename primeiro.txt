@@ -1,4 +1,4 @@
 primeira linha
 segunda linha
 	criei uma função
-a = 1
+a = 3
