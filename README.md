@@ -1,2 +1,2 @@
-# Resoluções de Sistemas de Equações e Lineares
+# Resoluções de Sistemas de Equações Lineares
 Solução por Gauss-Jordan
