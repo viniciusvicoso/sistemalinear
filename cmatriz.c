@@ -19,4 +19,17 @@ main()
 		}
 		printf("\n");
 	}
+	
+	
+	printf("\nMatriz Completa:\n");
+	
+	for(l=0;l<4;l++)				//imprimindo a matriz
+	{
+		for(c=0;c<5;c++)
+			
+			printf("%.2f\t",M[l][c]);
+		
+		printf("\n");
+	}
+	printf("\n\n");
 }
