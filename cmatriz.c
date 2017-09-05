@@ -77,5 +77,28 @@ main()
 	x[1]=-1*(M[1][4]+(M[1][3]*x[3])+x[2]);
 	x[0]=M[0][4]-(M[0][3]*x[3])-x[1];
 	
-     
+	printf("\nMatriz Escalonada:\n");
+	
+	for(l=0;l<4;l++)				
+	{
+		for(c=0;c<5;c++)
+			
+			printf("%.1f\t",M[l][c]);
+		
+		printf("\n");
+	}
+	printf("\n\n");
+	
+	
+	//Imprimeindo os resultados
+	
+	printf("\nResultado do sistema:\n");
+	
+	for(l=0;l<4;l++)
+		
+		printf("\t%.2f\n",x[l]);
+
+	printf("\n\n");
+	
+	fclose(in);
 }
