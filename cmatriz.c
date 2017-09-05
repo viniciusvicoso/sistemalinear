@@ -32,4 +32,12 @@ main()
 		printf("\n");
 	}
 	printf("\n\n");
+	
+	
+	//Zerando o primeiro elemento da segunda linha
+	
+	lbd=M[1][0]/M[0][0];
+	M[1][0]=M[1][0]-(lbd*M[0][0]);
+	
+     
 }
