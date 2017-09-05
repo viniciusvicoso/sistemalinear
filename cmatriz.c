@@ -34,10 +34,17 @@ main()
 	printf("\n\n");
 	
 	
-	//Zerando o primeiro elemento da segunda linha
+	//Zerando os elementos da primeira coluna exceto o primeiro
 	
-	lbd=M[1][0]/M[0][0];
-	M[1][0]=M[1][0]-(lbd*M[0][0]);
+	for(l=1;l<4;l++)
+	{
+        lbd=M[l][0]/M[0][0];
+
+		for(c=0;c<5;c++)
+		
+			M[l][c]=M[l][c]-(lbd*M[0][c]);
+	
+	}     
 	
      
 }
