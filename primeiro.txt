@@ -2,3 +2,4 @@ primeira linha
 segunda linha
 	criei uma função
 a = 55
+b = 2
