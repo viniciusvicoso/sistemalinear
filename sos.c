@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
+
 #include<math.h>
+
 
 void imprime ( double **M, int dim)
 {
@@ -201,6 +203,7 @@ void inversa (double **M,int dim)
 }
 
 
+
 void jacobi(double **M,int dim)
 {
 	int i,j,c=0;
@@ -259,6 +262,7 @@ void jacobi(double **M,int dim)
 	
 	printf("\nNúmero de iterações: %d\n\n",c);
 }
+
 	
 
 int main(int qarg, char *arq[])
@@ -295,7 +299,11 @@ int main(int qarg, char *arq[])
     imprime(M,dim);
 	//procurando o elemento e trocando as linhas
 	
+
 	/*p = pivotamento(M,dim);
+=======
+	p = pivotamento(M,dim);
+>>>>>>> efd6d13e9f07432720392144db308208c12a462e
 	printf("\nMatriz Escalonada:\n");
 	imprime(M,dim);
 	
@@ -309,12 +317,13 @@ int main(int qarg, char *arq[])
     
     
     //Matriz inversa
+<<<<<<< HEAD
     inversa(M,dim); */
     
     
     //Método de Jacobi
     jacobi(M,dim);
-    
+
     fclose(in);
     
     return(0);
