@@ -93,7 +93,7 @@ void decomposicaoLU(double **M,int dim)
     
     
     U = malloc (dim * sizeof (double *));
-   for (i = 0; i < dim; ++i)
+	for (i = 0; i < dim; ++i)
       U[i] = malloc ((dim+1) * sizeof (double));
     
     
@@ -203,7 +203,6 @@ void inversa (double **M,int dim)
 }
 
 
-
 void jacobi(double **M,int dim)
 {
 	int i,j,c=0;
@@ -239,6 +238,65 @@ void jacobi(double **M,int dim)
 			x[i] = (1/M[i][i]) * (b[i] - soma);
 			
 			nmax += fabs(x0[i]-x[i]) / fabs(x[i]);
+		}
+		
+		c++;
+					
+	}while(nmax > 1e-5);
+	
+	
+	printf("\nVetor B:\n");
+	for(i=0; i<dim; i++)
+	
+		printf("%lf\t",b[i]);
+	
+	printf("\n");
+	
+	printf("\nVetor X:\n");
+	for(i=0; i<dim; i++)
+	
+		printf("%lf\t",x[i]);
+	
+	printf("\n");
+	
+	printf("\nNúmero de iterações: %d\n\n",c);
+}
+
+
+void gauss-seidel(double **M,int dim)
+{
+	
+	int i,j,c=0;
+	double b[dim],x0 = 0.0,x[dim],soma,nmax;
+	
+	
+	for(i=0; i<dim; i++)
+	{
+		x[i]=0;
+		
+		b[i] = M[i][dim];
+	}
+		
+	do
+	{
+		nmax=0;
+		
+		for(i=0; i<dim; i++)
+		{
+			soma = 0.0;	
+			
+			for(j=0; j<dim; j++)
+			{
+				if(j!=i)
+				
+					soma = soma+(M[i][j]*x[j]);
+			}
+		
+			x0 = (1/M[i][i]) * (b[i] - soma);
+			
+			nmax += fabs(x0 - x[i]) / fabs(x[i]);
+			
+			x[i] = x0;
 		}
 		
 		c++;
@@ -322,8 +380,11 @@ int main(int qarg, char *arq[])
     
     
     //Método de Jacobi
-    jacobi(M,dim);
-
+	jacobi(M,dim);
+	
+	
+	//Método de Gauss-Seidel
+	gauss-seidel(M, dim);
     fclose(in);
     
     return(0);
